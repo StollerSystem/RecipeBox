@@ -2,13 +2,13 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Category
+@model RecipeBox.Models.Tag
 
-<h4>Add a new category</h4>
+<h4>Add a new Tag</h4>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
-    <input type="submit" value="Add new category" />
+    @Html.LabelFor(model => model.TagName)
+    @Html.TextBoxFor(model => model.TagName)
+    <input type="submit" value="Add new Tag" />
 }
 <p>@Html.ActionLink("Show all categories", "Index")</p>

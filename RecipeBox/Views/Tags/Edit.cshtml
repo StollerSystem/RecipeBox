@@ -2,18 +2,18 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Category
+@model RecipeBox.Models.Tag
 
 <h2>Edit</h2>
 
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Edit this Tag: @Html.DisplayFor(model => model.TagName)</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.CategoryId)
+    @Html.HiddenFor(model => model.TagId)
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.TagName)
+    @Html.EditorFor(model => model.TagName)
 
     <input type="submit" value="Save" />
 }
