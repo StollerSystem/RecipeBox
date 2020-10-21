@@ -11,20 +11,20 @@ using System.Security.Claims;
 
 namespace RecipeBox.Controllers
 {
-  [Authorize] //new line
+  [Authorize] 
   public class RecipiesController : Controller
   {
     private readonly RecipeBoxContext _db;
-    private readonly UserManager<ApplicationUser> _userManager; //new line
+    private readonly UserManager<ApplicationUser> _userManager; 
 
-    //updated constructor
+    
     public RecipiesController(UserManager<ApplicationUser> userManager, RecipeBoxContext db)
     {
       _userManager = userManager;
       _db = db;
     }
 
-    //updated Index method
+    
     public async Task<ActionResult> Index()
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -39,7 +39,7 @@ namespace RecipeBox.Controllers
       return View();
     }
 
-    //updated Create post method
+    
     [HttpPost]
     public async Task<ActionResult> Create(Recipe recipe, int TagId)
     {
